@@ -1,1 +1,6 @@
+# test
 /target
+
+# eclipse
+/.classpath
+/.project
