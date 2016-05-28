@@ -1,6 +1,8 @@
-# test
+# package test
 /*/target
 
 # eclipse
 /*/.classpath
 /*/.project
+/.classpath
+/.project
