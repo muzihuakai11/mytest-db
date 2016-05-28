@@ -1,6 +1,6 @@
 # test
-/target
+/*/target
 
 # eclipse
-/.classpath
-/.project
+/*/.classpath
+/*/.project
