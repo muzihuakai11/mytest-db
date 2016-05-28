@@ -8,13 +8,34 @@
 	<name>mytest-db</name>
 	<description>opration about database</description>
 	
+	<modules>
+		<module>mytest-mybatis-mysql</module>
+	</modules>
+	
 	<properties>
 		<java.version>1.8</java.version>
 	    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	    
+	    <!-- log -->
+	    <slf4j.version>1.7.12</slf4j.version>
+	    <log4j2.version></log4j2.version>
+	    
+	    <!-- spring -->
+	    <spring.version></spring.version>
+	    <!-- database -->
+	    
+	    <!-- tools -->
+	    <fastjson.version></fastjson.version>
+	    <jackson.version></jackson.version>
+	    
 	</properties>
 	
+	<dependencies>
+		
+	</dependencies>
 	
-	
-	
+	<build>
+		
+	</build>
 	
 </project>
