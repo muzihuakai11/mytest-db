@@ -15,7 +15,7 @@ public class TestController extends BaseController {
 
 	@RequestMapping(value = "/version", method = RequestMethod.GET)
 	public ResponseEntity<?> getVersion() {
-		log.info("get version");
+		log.info("get version 1.0.0");
 		return returnJsonObject("version 1.0.0");
 	}
 	

@@ -1,1 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<properties>
+		<property name="log_path">/usr/logfile</property>
+		<property name="log_size">20M</property>
+		<property name="max_history">200</property>
+		<property name="log_pattern">%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</property>
+	</properties>
+
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="${log_pattern}" />
+		</Console>
+
+		<RollingFile name="RollingFile" fileName="${log_path}/mybatis-mysql.log"
+			filePattern="${log_path}/mybatis-mysql-%d{yyyy-MM-dd}-%i.log">
+			<PatternLayout pattern="${log_pattern}" />
+			<Policies>
+				<SizeBasedTriggeringPolicy size="${log_size}" />
+			</Policies>
+			<DefaultRolloverStrategy max="max_history" />
+		</RollingFile>
+	</Appenders>
+
+	<Loggers>
+        <!-- <Logger name="mytest.mybatis" level="info">
+            <appender-ref ref="console"/>
+            <appender-ref ref="RollingFile"/>
+        </Logger> -->
+		<Root level="info">
+			<appender-ref ref="RollingFile" />
+		</Root>
+	</Loggers>
+</Configuration>
