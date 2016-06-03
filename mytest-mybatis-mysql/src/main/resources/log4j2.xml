@@ -16,6 +16,7 @@
 			filePattern="${log_path}/mybatis-mysql-%d{yyyy-MM-dd}-%i.log">
 			<PatternLayout pattern="${log_pattern}" />
 			<Policies>
+				<TimeBasedTriggeringPolicy/>
 				<SizeBasedTriggeringPolicy size="${log_size}" />
 			</Policies>
 			<DefaultRolloverStrategy max="max_history" />
@@ -23,10 +24,6 @@
 	</Appenders>
 
 	<Loggers>
-        <!-- <Logger name="mytest.mybatis" level="info">
-            <appender-ref ref="console"/>
-            <appender-ref ref="RollingFile"/>
-        </Logger> -->
 		<Root level="info">
 			<appender-ref ref="RollingFile" />
 		</Root>
