@@ -19,7 +19,7 @@
 				<TimeBasedTriggeringPolicy/>
 				<SizeBasedTriggeringPolicy size="${log_size}" />
 			</Policies>
-			<DefaultRolloverStrategy max="max_history" />
+			<DefaultRolloverStrategy max="${max_history}" />
 		</RollingFile>
 	</Appenders>
 

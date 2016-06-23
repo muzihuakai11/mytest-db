@@ -2,6 +2,8 @@
 /*/target
 
 # eclipse
+/.settings
+/*/.settings
 /*/.classpath
 /*/.project
 /.classpath
