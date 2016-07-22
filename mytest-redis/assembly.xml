@@ -1,0 +1,53 @@
+<assembly
+	xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
+	<id>assembly</id>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<formats>
+		<format>dir</format>
+	</formats>
+
+	<dependencySets>
+		<!-- 依赖包的输出路径 -->
+		<dependencySet>
+			<outputDirectory>WEB-INF/lib</outputDirectory>
+			<excludes>
+				<exclude>commons-logging:commons-logging</exclude>
+				<exclude>org.slf4j:slf4j-log4j12</exclude>
+			</excludes>
+		</dependencySet>
+	</dependencySets>
+
+	<!-- 需要打包的文件集 -->
+	<fileSets>
+		<fileSet>
+			<directory>src/main/webapp</directory>
+			<outputDirectory>/</outputDirectory>
+			<excludes>
+				<exclude>*/lib/**</exclude>
+			</excludes>
+		</fileSet>
+		<fileSet>
+			<directory>src/main/resources</directory>
+			<outputDirectory>WEB-INF/classes</outputDirectory>
+			<includes>
+				<include>**/*.xml</include>
+				<include>**/*.properties</include>
+				<include>**/*.sql</include>
+				<include>**/*.txt</include>
+			</includes>
+			<excludes>
+				<exclude>*/lib/**</exclude>
+			</excludes>
+		</fileSet>
+	</fileSets>
+
+	<files>
+		<file>
+			<source>target/${project.artifactId}-${project.version}.jar</source>
+			<outputDirectory>WEB-INF/lib</outputDirectory>
+		</file>
+	</files>
+
+</assembly>
